@@ -1,0 +1,32 @@
+p {
+  font-family: Lato;
+}p {
+    font-family: Lato;
+  }
+
+   table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: AUTO;
+    font-family: monospace;
+    float:center;
+    border: solid black;
+} 
+thead {
+    border-bottom: #000 3px double;;
+}
+ td, th {
+    border: #000 1px solid;
+    
+}
+td>th {
+    padding: 2px;
+    width: 100px;
+    overflow: hidden;
+    
+}
+
+textarea, input[type="button"], table {
+    margin: 4px;
+    padding: 2px;
+}

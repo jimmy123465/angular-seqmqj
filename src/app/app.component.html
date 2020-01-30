@@ -1,0 +1,121 @@
+<div class="row">
+ 
+  <!--
+    <input type="file" (change)="onChange($event.target.files)" [(ngModel)]="role">
+    <br> -->
+    
+    
+    <div>
+        <!-- <h3>File Content</h3>
+     <pre> {{fileContent}} </pre> 
+    </div>
+    </div>
+    
+    <br>
+    
+    <button (click)="download()">Generate Word Content List</button> -->
+    
+    
+ 
+    
+    <!-- <h1>Word List with Frequency</h1> -->
+    <h1> Content</h1>
+    <textarea id="wordsTxtAra" cols="100" [(ngModel)]="search1"  rows="25">{{fileContent}}</textarea><br />
+    <label class="nopadding clrlbl"> Characters length: {{fileContent.length}}</label><br>
+    <button style="background-color:teal ;" class="btn btn-success"  id="countWordsBtn"> Word list  </button> &nbsp;&nbsp;&nbsp; 
+    <button  style="background-color:teal ;" class="btn btn-success"  (click)="fun(search1,consno)"> Collocates </button> 
+    &nbsp;&nbsp;&nbsp; 
+    <button  style="background-color:teal ;" class="btn btn-success"  (click)="pframe(search1,consno);newmeth(search1)"> P Frame </button> 
+    &nbsp;&nbsp;&nbsp; 
+    <!-- <button  style="background-color:teal ;" class="btn btn-success"  (click)="newmeth(search1)"> P Frame 1 </button> 
+    &nbsp;&nbsp;&nbsp;  -->
+    <button  style="background-color:teal ;" class="btn btn-success"  (click)="fun(search1,consno)"> Collocates with search term </button> 
+    <br><br>
+    <div class="form-group">
+      <input name="pname"  type="number" [(ngModel)]="consno" placeholder="Input number of terms" > <br> 
+    </div>
+    <br>
+    <div class="form-group">
+  
+     
+    <div id="wordFreq"></div>
+    </div>
+    </div>
+    
+    
+  <div class="row" >  
+     
+     <!--  {{search1}}
+      {{consno}} -->
+      <br>
+    </div>
+     
+     <!--  <div class="form-group">
+        <mat-form-field>
+            <input name="pname"  type="textarea" [(ngModel)]="formdata.search12" placeholder="Search Samhita" >
+        </mat-form-field>
+      </div> -->
+      
+    
+    <!-- 
+      <div class="form-group">
+        <button  style="background-color:teal ;" class="btn btn-success"  (click)="fun()">go</button> &nbsp;&nbsp;&nbsp;  
+         
+      </div> -->
+  
+      <ng-container *ngIf="datap">
+  
+       <!--  <input type="text" class="form-control"  [(ngModel)]="searchterm" placeholder="Search by keyword" style="width:200px" /> -->
+       <div>
+             <label>Word List: </label>
+                    <select (onchange)="filterForeCasts($event.target.value)" [(ngModel)]="searchterm" >
+                      <option value="0">Select word from List</option>
+                      <option *ngFor="let a of wordlt" value={{a}}>
+                                       {{a}}
+                      </option>
+                    </select>
+      </div>
+    
+  
+      <div class="table-responsive">
+              <table class="table table-bordered w-auto">
+                  <thead>
+                      <th>P frame search for keyword :  "{{searchterm}}" is :</th>
+                  
+                  </thead>
+                  <tbody >
+        
+                      <tr  *ngFor="let datas of datap">
+                      <td>{{datas}}</td></tr>  
+                  </tbody>
+              </table>
+       </div>
+  
+      </ng-container> 
+  
+    <br>
+            <!-- -------------------------------------------------------------- -->
+   
+             <ng-container *ngIf="data1">
+    
+                <div class="table-responsive">
+                     <table class="table table-bordered w-auto">
+                        <thead>
+
+                            <th>Words with Frequency '{{consno}}' words</th>
+                  
+                        </thead>
+                        <tbody >
+        
+                            <tr  *ngFor="let datas of data1">
+                            <td>{{datas}}</td>
+                            </tr>  
+                        </tbody>
+                      </table>
+              <script src="src/js/angular-socialshare.js"></script> 
+               </div>
+             </ng-container>  
+  
+ <!--  <div *ngFor="let a of ram">
+    {{a}}
+  </div> -->
